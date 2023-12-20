@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FPTBook</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/FPTBook.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="https://kit.fontawesome.com/63149990bf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/Views/Shared/Layout.cshtml.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a class="nav__logo" asp-area="" asp-controller="Home" asp-action="Index">
+                <i class="fa-solid fa-swatchbook"></i>FPTBook
+            </a>
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link active-link" asp-area="" asp-controller="Home" asp-action="Index">
+                            <i class="fa-solid fa-house"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link">
+                            <i class="fa-solid fa-book"></i>
+                            <span>Featured</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link">
+                            <i class="fa-solid fa-tags"></i>
+                            <span>Discount</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link">
+                            <i class="fa-regular fa-bookmark"></i>
+                            <span>New Books</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link">
+                            <i class="fa-regular fa-comment-dots"></i>
+                            <span>Testimonial</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav__actions">
+                <i class="fa-solid fa-magnifying-glass" id="search-button"></i>
+                <a asp-controller="Account" asp-action="Login"><i class="fa-regular fa-user" id="user-button"></i></a>
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+            </div>
+        </nav>
+    </header>
+    @RenderBody()
+
+    <footer class="footer">
+        <div class="footer__container container grid">
+            <div>
+                <a class="footer__logo">
+                    <i class="fa-solid fa-swatchbook"></i>FPTBook
+                </a>
+                <p class="footer__description">
+                    Find and explore the best <br>
+                    eBooks from all your <br>
+                    favorite writers.
+                </p>
+            </div>
+            <div class="footer__data grid">
+                <div>
+                    <h3 class="footer__title">About</h3>
+                    <ul class="footer_links">
+                        <li>
+                            <a class="footer__link">Awards</a>
+                        </li>
+
+                        <li>
+                            <a class="footer__link">FAQs</a>
+                        </li>
+
+                        <li>
+                            <a class="footer__link">Privacy policy</a>
+                        </li>
+
+                        <li>
+                            <a class="footer__link">Terms of services</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer__title">Company</h3>
+                    <ul class="footer_links">
+                        <li>
+                            <a class="footer__link">Blogs</a>
+                        </li>
+
+                        <li>
+                            <a class="footer__link">Community</a>
+                        </li>
+
+                        <li>
+                            <a class="footer__link">Our team</a>
+                        </li>
+
+                        <li>
+                            <a class="footer__link">Help center</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer__title">Contact</h3>
+                    <ul class="footer_links">
+                        <li>
+                            <a class="footer__info">
+                                Av. Hacienda <br>
+                                Lima 4321, Perú
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="footer__info">
+                                e.book@email.com <br>
+                                0987-654-321
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer__title">Social</h3>
+                    <div class="footer__social">
+                        <a target="_blank" class="footer__social-link">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+
+                        <a target="_blank" class="footer__social-link">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a target="_blank" class="footer__social-link">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="footer__copy">
+            &#169; All Rights Reserved By Bedimcode
+        </span>
+    </footer>
+    <a class="scrollup" id="scroll-up">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/scrollreveal.min.js"></script>
+    <script src="~/js/swiper-bundle.min.js"></script>
+    <script src="~/js/site.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

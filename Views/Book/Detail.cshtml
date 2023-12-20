@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FPTBook</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/FPTBook.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="~/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.6.0/remixicon.css" />
+    <script src="https://kit.fontawesome.com/63149990bf.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon"
+          href="assets/img/favicon.png"
+          type="image/x-icon" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" />
+    <link rel="stylesheet" href="~/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <title>Responsive book website</title>
+</head>
+<body>
+    <section>
+        <div class="detail_product-container flex-container">
+            <div class="product-left">
+                <div class="product_main-image">
+                    <img src="~/images/book-1-1.png" class="product-slide">
+                </div>
+                <div class="product_option flex-container">
+                </div>
+            </div>
+            <div class="product-right">
+                <div class="product-name">
+                    <h3>Teen</h3>
+                </div>
+                <div class="product-price">
+                    <h4> <small>$</small> Price </h4>
+                </div>
+                <div class="product-detail">
+                    <p>BookDetails</p>
+                </div>
+                <div class="product-number">
+                    <h5>Number</h5>
+                    <div class="product-add flex-add">
+                        <span>-</span>
+                        <label>1</label>
+                        <span>+</span>
+                    </div>
+                </div>
+                <div class="product-buy">
+                    <button class="buy-button button">Add to Bag</button>
+                </div>
+            </div>
+        </div>
+        @* <div class="detail_product-container flex-container">
+            <div class="product-left">
+                <div class="product_main-image">
+                    <img src="@Url.Content("~/images/" + @Model.ImageBook.BookImage)" class="product-slide">
+                </div>
+                <div class="product_option flex-container">
+                </div>
+            </div>
+            <div class="product-right">
+                <div class="product-name">
+                    <h3>@Model.BookTitle</h3>
+                </div>
+                <div class="product-price">
+                    <h4> <small>$</small> @Model.BookPrice </h4>
+                </div>
+                <div class="product-detail">
+                    <p>@Model.BookDetails</p>
+                </div>
+                <div class="product-number">
+                    <h5>Number</h5>
+                    <div class="product-add flex-add">
+                        <span>-</span>
+                        <label>1</label>
+                        <span>+</span>
+                    </div>
+                </div>
+                <div class="product-buy">
+                    <button class="buy-button button">Add to Bag</button>
+                </div>
+            </div>
+        </div> *@
+    </section>
+    <script>
+        function img(anything) {
+            document.querySelector('.product-slide').src = anything;
+        }
+
+        function change(change) {
+            const line = document.querySelector('.home');
+            line.style.background = change;
+        }
+    </script>
+</body>
+
+</html>
+

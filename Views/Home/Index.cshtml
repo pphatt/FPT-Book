@@ -1,0 +1,360 @@
+﻿@* @model IEnumerable<Book> *@
+
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FPTBook</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/FPTBook.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="~/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.6.0/remixicon.css" />
+    <script src="https://kit.fontawesome.com/63149990bf.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon"
+          href="assets/img/favicon.png"
+          type="image/x-icon" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" />
+    <link rel="stylesheet" href="~/css/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <title>Responsive book website</title>
+</head>
+<body>
+    <div class="search" id="search-content">
+        <form action="" class="search__form">
+            <i class="fa-solid fa-magnifying-glass search__icon"></i>
+            <input type="search" placeholder="What are you looking for?" class="search__input" />
+        </form>
+        <i class="fa-solid fa-xmark search__close" id="search-close"></i>
+    </div>
+    <main class="main">        
+        <section class="home section" id="home">
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <h1 class="home__title">
+                        Browse & <br />
+                        Select E-Books
+                    </h1>
+
+                    <p class="home__description">
+                        Find the best book from your davorite writers, explore hundreds of books
+                        with all possible categories, take advantage of the 50% discount and much more.
+                    </p>
+
+                    <a class="button">Explore Now</a>
+                </div>
+                <div class="home__images">
+                    <div class="home__swiper swiper">
+                        <div class="swiper-wrapper">
+                            <article class="home__article swiper-slide">
+                                <img src="~/images/book-1.png" alt="image" class="home__img" />
+                            </article>
+
+                            <article class="home__article swiper-slide ">
+                                <img src="~/images/book-2.png" alt="image" class="home__img" />
+                            </article>
+
+                            <article class="home__article swiper-slide">
+                                <img src="~/images/book-3.png" alt="image" class="home__img" />
+                            </article>
+
+                            <article class="home__article swiper-slide">
+                                <img src="~/images/book-4.png" alt="image" class="home__img" />
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="services section">
+            <div class="services__container container grid">
+                <article class="services__card">
+                    <i class="fa-solid fa-truck"></i>
+                    <h3 class="services__title">Free Shipping</h3>
+                    <p class="services__description">Order More Than $100</p>
+                </article>
+                <article class="services__card">
+                    <i class="fa-solid fa-lock"></i>
+                    <h3 class="services__title">Secure Payment</h3>
+                    <p class="services__description">100% Secure Payment</p>
+                </article>
+                <article class="services__card">
+                    <i class="fa-solid fa-headphones"></i>
+                    <h3 class="services__title">24/7 Support</h3>
+                    <p class="services__description">Call us anytime</p>
+                </article>
+            </div>
+        </section>     
+        <section class="featured section" id="featured">
+            <h2 class="section__title">
+                Featured Books
+            </h2>
+            <div class="featured__container container">
+                <div class="featured__swiper swiper">
+                    <div class="swiper-wrapper">
+                        @for (var i = 0; i < 20; i++)
+                        {
+                            <article class="featured__card swiper-slide">
+                                <a asp-controller="Book" asp-action="DetailBook">
+                                    <img src="~/images/book-1-1.png" alt="image" class="featured__img" />
+                                    <h2 class="featured__title">Harry potter</h2>
+                                    <div class="featured__prices">
+                                        <span class="featured__discount">$15</span>
+                                        <span class="featured__price">$19.99</span>
+                                    </div>
+
+                                    <button class="button">Add To Cart</button>
+
+                                    <div class="featured__actions">
+                                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                                        <button><i class="fa-regular fa-heart"></i></button>
+                                        <button><i class="fa-regular fa-eye"></i></button>
+                                    </div>
+                                </a>
+                            </article>
+                        }
+                        
+                        @* @foreach (var item in Model)
+                        {                            
+                            <article class="featured__card swiper-slide">
+                                <a asp-controller="Home" asp-action="DetailBook" asp-route-id="@item.BookId">
+                                    <img src="@Url.Content("~/images/" + item.ImageBook.BookImage)" alt="image" class="featured__img" />
+                                    <h2 class="featured__title">@item.BookTitle</h2>
+                                    <div class="featured__prices">
+                                        <span class="featured__discount">$@item.BookPrice</span>
+                                        <span class="featured__price">$19.99</span>
+                                    </div>
+
+                                    <button class="button">Add To Cart</button>
+
+                                    <div class="featured__actions">
+                                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                                        <button><i class="fa-regular fa-heart"></i></button>
+                                        <button><i class="fa-regular fa-eye"></i></button>
+                                    </div>
+                                </a>
+                            </article>
+                        } *@
+                    </div>
+                    <div class="swiper-button-prev"><i class="fa-solid fa-chevron-left"></i></div>
+                    <div class="swiper-button-next"><i class="fa-solid fa-chevron-right"></i></div>
+                </div>
+            </div>
+        </section>
+        <section class="discount section" id="discount">
+            <div class="discount__container container grid">
+                <div class="discount__data">
+                    <h2 class="discount__title section__title">
+                        Up To 50% Discount
+                    </h2>
+                    <p class="discount__description">
+                        Take advantage of the discount days we
+                        have for you, buy books from your favorite
+                        writers, the more you buy, the more
+                        discounts we have for you.
+                    </p>
+                    <a class="button">Shop Now</a>
+                </div>
+                <div class="discount__images">
+                    <img src="~/images/discount-book-1.png" alt="image" class="discount__img-1" />
+                    <img src="~/images/discount-book-2.png" alt="image" class="discount__img-2" />
+
+                </div>
+            </div>
+        </section>
+        <section class="new section" id="new">
+            <h2 class="section__title">
+                New Books
+            </h2>
+            <div class="new__container container">
+                <div class="new__swiper swiper">
+                    <div class="swiper-wrapper">
+                        <a class="new__card swiper-slide" asp-controller="Book" asp-action="DetailBook">
+                            <img src="~/images/book-1-1.png" alt="image" class="new__img" />
+                            <div>
+                                <h2 class="new__title">Harry potter</h2>
+                                <div class="new__prices">
+                                    <span class="new__discount">$15</span>
+                                    <span class="new__price">$20.99</span>
+                                </div>
+                                <div class="new__starts">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                            </div>
+                        </a>
+                        @* @foreach (var item in Model)
+                        {
+                            <a class="new__card swiper-slide" asp-controller="Home" asp-action="DetailBook" asp-route-id="@item.BookId">
+                                <img src="@Url.Content("~/images/" + item.ImageBook.BookImage)" alt="image" class="new__img" />
+                                <div>
+                                    <h2 class="new__title">@item.BookTitle</h2>
+                                    <div class="new__prices">
+                                        <span class="new__discount">@item.BookPrice</span>
+                                        <span class="new__price">$20.99</span>
+                                    </div>
+                                    <div class="new__starts">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star-half-stroke"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        } *@
+                    </div>
+                </div>
+                <div class="new__swiper swiper">
+                    <div class="swiper-wrapper">
+                        <a class="new__card swiper-slide" asp-controller="Book" asp-action="DetailBook" >
+                            <img src="~/images/book-1-1.png" alt="image" class="new__img" />
+                            <div>
+                                <h2 class="new__title">Harry potter</h2>
+                                <div class="new__prices">
+                                    <span class="new__discount">$15</span>
+                                    <span class="new__price">$20.99</span>
+                                </div>
+                                <div class="new__starts">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                            </div>
+                        </a>
+                       @*  @foreach (var item in Model)
+                        {
+                            <a class="new__card swiper-slide" asp-controller="Home" asp-action="DetailBook" asp-route-id="@item.BookId">
+                                <img src="@Url.Content("~/images/" + item.ImageBook.BookImage)" alt="image" class="new__img" />
+                                <div>
+                                    <h2 class="new__title">@item.BookTitle</h2>
+                                    <div class="new__prices">
+                                        <span class="new__discount">$@item.BookPrice</span>
+                                        <span class="new__price">$20.99</span>
+                                    </div>
+                                    <div class="new__starts">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star-half-stroke"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        } *@
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="join section" id="join">
+            <div class="join__container">
+                <img src="~/images/join-bg.jpg" alt="image" class="join__bg" />
+                <div class="join__data container grid">
+                    <h2 class="join__title section__title">
+                        Subscribe To Receive <br>
+                        The Latest Updates
+                    </h2>
+                    <form class="join__form">
+                        <input class="join__input" type="email" placeholder="Enter email" />
+                        <button type="submit" class="join__button button">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="testimonial section" id="tétimonial">
+            <h2 class="section__title">
+                Customer Options
+            </h2>
+            <div class="testiminial__container container">
+                <div class="testimonial__swiper swiper">
+                    <div class="swiper-wrapper">
+                        <article class="testimonial__card swiper-slide">
+                            <img src="~/images/acount1.png" alt="image" class="testimonial__img" />
+                            <h2 class="testimonial__title">Lê Nguyễn QUốc Khánh</h2>
+                            <p class="tstimonial__description">
+                                The best website to buy books, the purchase
+                                is very easy to make and has great discounts.
+                            </p>
+
+                            <div class="testimonial__starts">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                        </article>
+
+                        <article class="testimonial__card swiper-slide">
+                            <img src="~/images/acount10.png" alt="image" class="testimonial__img" />
+                            <h2 class="testimonial__title">Đỗ Thiên Ân</h2>
+                            <p class="tstimonial__description">
+                                The best website to buy books, the purchase
+                                is very easy to make and has great discounts.
+                            </p>
+
+                            <div class="testimonial__starts">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                        </article>
+
+                        <article class="testimonial__card swiper-slide">
+                            <img src="~/images/acount7.png" alt="image" class="testimonial__img" />
+                            <h2 class="testimonial__title">Phùng Hữu Hoài Tuấn</h2>
+                            <p class="tstimonial__description">
+                                The best website to buy books, the purchase
+                                is very easy to make and has great discounts.
+                            </p>
+
+                            <div class="testimonial__starts">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                        </article>
+
+                        <article class="testimonial__card swiper-slide">
+                            <img src="~/images/acount8.png" alt="image" class="testimonial__img" />
+                            <h2 class="testimonial__title">Nguyễn Vĩnh Phúc</h2>
+                            <p class="tstimonial__description">
+                                The best website to buy books, the purchase
+                                is very easy to make and has great discounts.
+                            </p>
+
+                            <div class="testimonial__starts">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="~/js/swiper-bundle.min.js"></script>
+    <script src="~/js/scrollreveal.min.js"></script>
+    <script src="~/js/site.js"></script>
+</body>
+</html>

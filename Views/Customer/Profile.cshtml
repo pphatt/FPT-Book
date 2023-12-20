@@ -1,0 +1,228 @@
+﻿
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FPTBook</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/FPTBook.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="~/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.6.0/remixicon.css" />
+    <script src="https://kit.fontawesome.com/63149990bf.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon"
+          href="assets/img/favicon.png"
+          type="image/x-icon" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" />
+    <link rel="stylesheet" href="~/css/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <title>Responsive book website</title>
+</head>
+<body>
+    <div class="edit-profile" id="edit-profile">
+        <form action="" class="edit_form">
+            <div class="edit-email">
+                <label>Email:</label>
+                <input type="email" name="email" value="User email" />
+            </div>
+            <div class="edit-name">
+                <label>Name:</label>
+                <input type="text" name="name" value="User name" />
+            </div>
+            <div class="edit-password">
+                <label>Password:</label>
+                <input type="password" name="password" value="User password" />
+            </div>
+            <div class="edit-re-password">
+                <label>Re-Password:</label>
+                <input type="password" name="re-password" value="User re-password" />
+            </div>
+            <div class="edit-image">
+                <label>Image:</label>
+                <input type="file" name="image" />
+            </div>
+            <div class="edit-address">
+                <label>Address:</label>
+                <input type="text" name="address" value="User address" />
+            </div>
+            <div class="edit-phone">
+                <label>Phone:</label>
+                <input type="text" name="phone" value="User phone" />
+            </div>
+            <div class="edit-birthday">
+                <label>Birthday:</label>
+                <input type="password" name="birthday" value="User re-password" />
+            </div>
+            <div class="edit-sex">
+                <label>Sex:</label>
+                <select name="sex">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="edit-btns">
+                <button class="save-edit-button button" id="save-edit-profile">
+                    Save
+                </button>
+                <button class="cancle-button button" id="cancle-edit-profile">
+                    Cancle
+                </button>
+            </div>
+        </form>
+        <i class="fa-solid fa-xmark edit_close" id="edit-close"></i>
+    </div>
+    <div class="register-seller" id="register-seller">
+        <form action="" class="register-seller_form">
+            <div class="name-store">
+                <label>Name Store:</label>
+                <input type="text" name="name-store" value="Name-store" />
+            </div>
+            <div class="register-seller-btns">
+                <button class="register-seller-button button" id="register-seller">
+                    Regiter seller
+                </button>
+                <button class="cancle-seller-button button" id="cancle-seller">
+                    Cancle
+                </button>
+            </div>
+        </form>
+        <i class="fa-solid fa-xmark register-seller_close" id="register-seller-close"></i>
+    </div>
+    <section class="profile_container">
+        <div class="profile_user-wrapper">
+            <div class="profile_user-wrap card">
+                <div class="profile_user-image">
+                    <img src="~/images/acount1.png" alt="image">
+                </div>
+            </div>
+            <div class="profile_user-detail card">
+                <div class="user-detail-name">
+                    <h1 class="user-name">
+                        UserFullName
+                    </h1>
+                    <div class="user-location">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>UserAddress</span>
+                    </div>
+                </div>
+                <div class="user-contact-information">
+                    <h1 class="information-heading">Contact Information</h1>
+                    <ul>
+                        <li class="user-phone">
+                            <h1 class="label">Phone:</h1>
+                            <span class="info">UserPhone</span>
+                        </li>
+
+                        <li class="user-address">
+                            <h1 class="label">Address:</h1>
+                            <span class="info">UserAddress</span>
+                        </li>
+
+                        <li class="user-email">
+                            <h1 class="label">E-mail:</h1>
+                            <span class="info">UserEmail</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="user-basic-infomation">
+                    <h1 class="information-heading">Basic Information</h1>
+                    <ul>
+                        <li class="user-birthday">
+                            <h1 class="label">Birthday:</h1>
+                            <span class="info">UserBirthday</span>
+                        </li>
+
+                        <li class="user-sex">
+                            <h1 class="label">Gender:</h1>
+                            <span class="info">UserSex</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="profile-btns">
+                    <button class="edit-info-button button" id="edit-info">
+                        Edit information
+                    </button>
+                    <button class="register-seller-button button" id="seller-register">
+                        Register as a seller
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        @* <div class="profile_user-wrapper">
+            <div class="profile_user-wrap card">
+                <div class="profile_user-image">
+                    <img src="@Url.Content("~/images/" + Model.UserImage)" alt="image">
+                </div>
+            </div>
+            <div class="profile_user-detail card">
+                <div class="user-detail-name">
+                    <h1 class="user-name">
+                        UserFullName
+                    </h1>
+                    <div class="user-location">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>UserAddress</span>
+                    </div>
+                </div>
+                <div class="user-contact-information">
+                    <h1 class="information-heading">Contact Information</h1>
+                    <ul>
+                        <li class="user-phone">
+                            <h1 class="label">Phone:</h1>
+                            <span class="info">UserPhone</span>
+                        </li>
+
+                        <li class="user-address">
+                            <h1 class="label">Address:</h1>
+                            <span class="info">UserAddress</span>
+                        </li>
+
+                        <li class="user-email">
+                            <h1 class="label">E-mail:</h1>
+                            <span class="info">UserEmail</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="user-basic-infomation">
+                    <h1 class="information-heading">Basic Information</h1>
+                    <ul>
+                        <li class="user-birthday">
+                            <h1 class="label">Birthday:</h1>
+                            <span class="info">UserBirthday</span>
+                        </li>
+
+                        <li class="user-sex">
+                            <h1 class="label">Gender:</h1>
+                            <span class="info">UserSex</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="profile-btns">
+                    <button class="edit-info-button button" id="edit-info">
+                        Edit information
+                    </button>
+                    <button class="register-seller-button button" id="seller-register">
+                        Register as a seller
+                    </button>
+                </div>
+
+            </div>
+        </div> *@
+    </section>
+    <script src="~/js/swiper-bundle.min.js"></script>
+    <script src="~/js/scrollreveal.min.js"></script>
+    <script src="~/js/site.js"></script>
+</body>
+</html>
+
